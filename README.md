@@ -51,3 +51,67 @@ To use Selenium effectively, you need:
 - It is **widely used** for **functional testing, regression testing, and cross-browser testing**.
 - Supports **multiple languages** (Java, Python, C#, etc.).
 - Used by companies to **automate testing and save manual effort**.
+### **Launching Chrome and Firefox Browsers Using Selenium WebDriver**
+
+Selenium WebDriver allows us to automate web browsers like **Chrome and Firefox**. The key steps involved in setting up and running Selenium WebDriver are as follows:
+## **1. Setting Up WebDriver for Chrome**
+To launch a Chrome browser using Selenium WebDriver, use the following Java code:
+```java
+WebDriver driver = new ChromeDriver();
+driver.get("http://www.google.com");
+```
+### **Steps to Set Up ChromeDriver**
+1. **Download ChromeDriver**  
+   - You can download the required WebDriver from **[chromedriver.chromium.org](https://chromedriver.chromium.org/)**.
+   - This is necessary for normal Java projects.
+2. **Dependency Handling**
+   - If using **Selenium 4.6+**, there is **no need** to set the property for ChromeDriver manually.
+   - WebDriver **Manager** will automatically handle the driver setup.
+
+## **2. Finding Web Elements in a Web Page**
+To interact with a web page, Selenium WebDriver needs to **find elements** (buttons, text fields, links, etc.).
+### **Different Locators in Selenium WebDriver**
+There are **8 locators** that help identify elements:
+1. **ID** – Finds elements using their unique `id` attribute.  
+2. **Name** – Finds elements using their `name` attribute.  
+3. **className** – Finds elements using their CSS class name.  
+4. **LinkText** – Finds links using the complete visible text of the link.  
+5. **Partial LinkText** – Finds links using a part of the visible text.  
+6. **TagName** – Finds elements based on their HTML tag (e.g., `input`, `button`).  
+7. **XPath** – Finds elements using XML path expressions.  
+8. **CSS Selector** – Finds elements using CSS rules.
+### **Example Usage in Java**
+Using **`findElement(By...)`**, we can locate elements as follows:
+```java
+WebElement searchBox = driver.findElement(By.name("q"));
+WebElement loginButton = driver.findElement(By.id("login"));
+WebElement signupLink = driver.findElement(By.linkText("Sign Up"));
+WebElement menu = driver.findElement(By.className("menu"));
+WebElement submitButton = driver.findElement(By.cssSelector(".btn-primary"));
+```
+## **Note**
+- Selenium WebDriver is used to **automate Chrome and Firefox browsers**.
+- We can **download ChromeDriver** and set up WebDriver for browser automation.
+- Web elements can be found using different **locators** like ID, Name, XPath, and CSS Selectors.
+- **Selenium 4.6+ has automatic WebDriver setup**, reducing manual effort.
+## Explanation of  WebElementsFinding stratagies code
+#### **1. Setting Up Selenium WebDriver**
+- We use **WebDriverManager** to automatically handle ChromeDriver setup.
+- `WebDriver driver = new ChromeDriver();` launches the Chrome browser.
+#### **2. Navigating to a Web Page**
+- `driver.get("https://www.google.com/");` opens Google.
+- `driver.get("https://github.com/login");` navigates to GitHub’s login page.
+#### **3. Locating Web Elements Using Different Locators**
+- **By ID** → `By.id("login_field")`
+- **By Name** → `By.name("password")`
+- **By Class Name** → `By.className("header-logo")`
+- **By Link Text** → `By.linkText("Forgot password?")`
+- **By Partial Link Text** → `By.partialLinkText("Create an")`
+- **By Tag Name** → `By.tagName("h1")`
+- **By XPath** → `By.xpath("//label[contains(text(),'Username or email address')]")`
+- **By CSS Selector** → `By.cssSelector("input[name='commit']")`
+#### **4. Highlighting Elements**
+- The `highlight()` method uses **JavaScript Executor** to apply a **red border and yellow background** to web elements.
+#### **5. Closing the Browser**
+- `driver.quit();` closes the browser session.
+This program demonstrates **finding elements using different strategies and highlighting them dynamically.** 🚀
