@@ -186,8 +186,6 @@ textbox.sendKeys("CharanTeja");
 ```
 This ensures the textbox is **visible** before sending input.
 
----
-
 ## **7. Verifying Placeholder Text**
 Some textboxes have placeholder text (default text). You can retrieve it using `getAttribute("placeholder")`.
 
