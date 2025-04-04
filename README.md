@@ -46,7 +46,7 @@ To use Selenium effectively, you need:
   - Filling forms
   - Scrolling pages
   - Extracting data
-####**Note**
+#### **Note**
 - Selenium is a **powerful tool for web automation**.
 - It is **widely used** for **functional testing, regression testing, and cross-browser testing**.
 - Supports **multiple languages** (Java, Python, C#, etc.).
