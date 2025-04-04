@@ -205,7 +205,7 @@ Handling textboxes in Selenium involves:
 ✔️ Using Explicit Waits for synchronization  
 ✔️ Interacting with hidden or disabled textboxes using JavaScript  
 ## Handling Basic HTML Controls in Selenium Webdriver
--- Handling basic HTML controls in **Selenium WebDriver** involves interacting with elements such as text boxes, buttons, checkboxes, radio buttons, dropdowns, links, and alerts. Below are the key concepts and code snippets to handle these elements using **Java**:
+Handling basic HTML controls in **Selenium WebDriver** involves interacting with elements such as text boxes, buttons, checkboxes, radio buttons, dropdowns, links, and alerts. Below are the key concepts and code snippets to handle these elements using **Java**:
 
 ### **1. Handling Text Boxes (Input Fields)**
 Use the `sendKeys()` method to enter text into a text box.
