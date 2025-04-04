@@ -1,6 +1,5 @@
 ### **Introduction to Selenium**
 Selenium is an **open-source tool** used for **automating web applications**. It allows testers and developers to control web browsers programmatically, making it an essential tool for web automation testing.
-
 ---
 
 ## **Selenium Suite**
