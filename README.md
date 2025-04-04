@@ -29,15 +29,15 @@ Selenium got its name **as a joke**!
 ## **Requirements to Use Selenium**
 To use Selenium effectively, you need:
 ### **1. Java Basics**
-   - Java is **commonly used** with Selenium.
-   - Need to understand **Java files, libraries, and object-oriented concepts**.
+- Java is **commonly used** with Selenium.
+- Need to understand **Java files, libraries, and object-oriented concepts**.
 ### **2. Java Eclipse Software (Recommended)**
-   - Eclipse IDE is used for **writing and running Selenium scripts**.
+- Eclipse IDE is used for **writing and running Selenium scripts**.
 ### **3. Selenium Server (Standalone)**
-   - Needed for running **Selenium Grid**.
+ - Needed for running **Selenium Grid**.
 ### **4. Adding Dependencies**
-   - If using a **normal Java project**, you need to **import Selenium JAR files** manually.
-   - If using **Maven**, you can add the **Selenium dependency** in `pom.xml`.
+- If using a **normal Java project**, you need to **import Selenium JAR files** manually.
+ - If using **Maven**, you can add the **Selenium dependency** in `pom.xml`.
 ## **Selenium WebDriver Usage**
 - Can **launch web browsers** like **Chrome, Firefox, Edge, etc.**.
 - Uses browser-specific **drivers** (e.g., ChromeDriver for Chrome).
