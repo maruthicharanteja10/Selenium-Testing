@@ -56,20 +56,20 @@ To use Selenium effectively, you need:
 ## **Launching Chrome and Firefox Browsers Using Selenium WebDriver**
 
 Selenium WebDriver allows us to automate web browsers like **Chrome and Firefox**. The key steps involved in setting up and running Selenium WebDriver are as follows:
-#### 1. Setting Up WebDriver for Chrome
+### 1. Setting Up WebDriver for Chrome
 To launch a Chrome browser using Selenium WebDriver, use the following Java code:
 ```java
 WebDriver driver = new ChromeDriver();
 driver.get("http://www.google.com");
 ```
-### **Steps to Set Up ChromeDriver**
+#### **Steps to Set Up ChromeDriver**
 1. **Download ChromeDriver**  
    - You can download the required WebDriver from **[chromedriver.chromium.org](https://chromedriver.chromium.org/)**.
    - This is necessary for normal Java projects.
 2. **Dependency Handling**
    - If using **Selenium 4.6+**, there is **no need** to set the property for ChromeDriver manually.
    - WebDriver **Manager** will automatically handle the driver setup.
-#### **2. Finding Web Elements in a Web Page**
+### **2. Finding Web Elements in a Web Page**
 To interact with a web page, Selenium WebDriver needs to **find elements** (buttons, text fields, links, etc.).
 ### **Different Locators in Selenium WebDriver**
 There are **8 locators** that help identify elements:
