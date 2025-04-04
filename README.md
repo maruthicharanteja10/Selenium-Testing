@@ -1,6 +1,6 @@
 ### **Introduction to Selenium**
 Selenium is an **open-source tool** used for **automating web applications**. It allows testers and developers to control web browsers programmatically, making it an essential tool for web automation testing.
----
+
 
 ## **Selenium Suite**
 Selenium consists of multiple components, each serving a different purpose:
@@ -23,7 +23,7 @@ Selenium consists of multiple components, each serving a different purpose:
    - Supports **distributed execution** of test cases.
    - Useful for **cross-browser testing**.
 
----
+
 
 ## **History of Selenium**
 - **Founder**: **Jason Huggins** (Created Selenium in **2004-2005**).  
