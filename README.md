@@ -46,8 +46,7 @@ To use Selenium effectively, you need:
   - Filling forms
   - Scrolling pages
   - Extracting data
-  
-**Note**
+####**Note**
 - Selenium is a **powerful tool for web automation**.
 - It is **widely used** for **functional testing, regression testing, and cross-browser testing**.
 - Supports **multiple languages** (Java, Python, C#, etc.).
@@ -96,7 +95,7 @@ WebElement submitButton = driver.findElement(By.cssSelector(".btn-primary"));
 - We can **download ChromeDriver** and set up WebDriver for browser automation.
 - Web elements can be found using different **locators** like ID, Name, XPath, and CSS Selectors.
 - **Selenium 4.6+ has automatic WebDriver setup**, reducing manual effort.
-#### **Explanation of  WebElementsFinding stratagies code**
+### **Explanation of  WebElementsFinding stratagies code**
 #### 1. Setting Up Selenium WebDriver
 - We use **WebDriverManager** to automatically handle ChromeDriver setup.
 - `WebDriver driver = new ChromeDriver();` launches the Chrome browser.
