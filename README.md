@@ -115,11 +115,13 @@ WebElement submitButton = driver.findElement(By.cssSelector(".btn-primary"));
 - `driver.quit();` closes the browser session.
 This program demonstrates **finding elements using different strategies and highlighting them dynamically.** 🚀
 
-#### **Concepts Related to Handling Textboxes in Selenium**
+## **Concepts Related to Handling Textboxes in Selenium**
 Handling textboxes in Selenium WebDriver involves various operations such as locating, entering text, retrieving text, clearing text, and verifying properties. Below are the key concepts:
+
  **1. Locating a Textbox Element**
 -- Before interacting with a textbox, it must be located on the webpage using **locators** like `id`, `name`, `className`, `XPath`, or `CSS Selector`.
-## **Example: Locating Using Different Locators**
+
+ **Example: Locating Using Different Locators**
 ```java
 WebElement textboxById = driver.findElement(By.id("username")); // Using id
 WebElement textboxByName = driver.findElement(By.name("username")); // Using name
@@ -132,6 +134,7 @@ WebElement textboxByCss = driver.findElement(By.cssSelector("input#username")); 
 textboxById.sendKeys("CharanTeja");
 ```
 This simulates typing the text into the input field.
+
  **3. Retrieving Text from a Textbox**
 -- To get the entered text, use **`getAttribute("value")`**.
 ```java
@@ -164,6 +167,7 @@ WebElement textbox = wait.until(ExpectedConditions.visibilityOfElementLocated(By
 textbox.sendKeys("CharanTeja");
 ```
 This ensures the textbox is **visible** before sending input.
+
 **7. Verifying Placeholder Text**
 Some textboxes have placeholder text (default text). You can retrieve it using `getAttribute("placeholder")`.
 ```java
