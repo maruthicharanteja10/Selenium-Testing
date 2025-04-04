@@ -116,7 +116,7 @@ WebElement submitButton = driver.findElement(By.cssSelector(".btn-primary"));
 - `driver.quit();` closes the browser session.
 This program demonstrates **finding elements using different strategies and highlighting them dynamically.** 🚀
 
-## **Concepts Related to Handling Textboxes in Selenium**
+## **Handling Textboxes in Selenium**
 Handling textboxes in Selenium WebDriver involves various operations such as locating, entering text, retrieving text, clearing text, and verifying properties. Below are the key concepts:
 
  **1. Locating a Textbox Element**
