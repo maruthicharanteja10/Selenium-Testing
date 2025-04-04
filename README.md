@@ -116,7 +116,7 @@ WebElement submitButton = driver.findElement(By.cssSelector(".btn-primary"));
 - `driver.quit();` closes the browser session.
 This program demonstrates **finding elements using different strategies and highlighting them dynamically.** 🚀
 
-## **Handling Textboxes in Selenium**
+## **Handling Textboxes in Selenium WebDriver**
 Handling textboxes in Selenium WebDriver involves various operations such as locating, entering text, retrieving text, clearing text, and verifying properties. Below are the key concepts:
 
  **1. Locating a Textbox Element**
@@ -204,4 +204,133 @@ Handling textboxes in Selenium involves:
 ✔️ Checking visibility, enablement, and read-only state  
 ✔️ Using Explicit Waits for synchronization  
 ✔️ Interacting with hidden or disabled textboxes using JavaScript  
+## Handling Basic HTML Controls in Selenium Webdriver
+-- Handling basic HTML controls in **Selenium WebDriver** involves interacting with elements such as text boxes, buttons, checkboxes, radio buttons, dropdowns, links, and alerts. Below are the key concepts and code snippets to handle these elements using **Java**:
+
+### **1. Handling Text Boxes (Input Fields)**
+Use the `sendKeys()` method to enter text into a text box.
+
+```java
+WebDriver driver = new ChromeDriver();
+driver.get("https://example.com");
+
+WebElement username = driver.findElement(By.id("username"));
+username.sendKeys("testuser");
+```
+
+**Common methods:**
+- `clear()` – Clears the text box.
+- `sendKeys("text")` – Enters text into the text box.
+- `getAttribute("value")` – Retrieves the text.
+
+### **2. Handling Buttons**
+Use `click()` to simulate a button click.
+
+```java
+WebElement loginButton = driver.findElement(By.id("login"));
+loginButton.click();
+```
+
+**Common methods:**
+- `click()` – Clicks the button.
+- `isEnabled()` – Checks if the button is enabled.
+
+### **3. Handling Checkboxes**
+Use `click()` to check/uncheck a checkbox.
+
+```java
+WebElement checkbox = driver.findElement(By.id("acceptTerms"));
+checkbox.click();
+```
+
+**Check if a checkbox is selected:**
+```java
+boolean isChecked = checkbox.isSelected();
+```
+
+### **4. Handling Radio Buttons**
+Use `click()` to select a radio button.
+```java
+WebElement maleRadio = driver.findElement(By.id("male"));
+maleRadio.click();
+```
+
+**Check if a radio button is selected:**
+```java
+boolean isSelected = maleRadio.isSelected();
+```
+
+### **5. Handling Dropdowns**
+Use the `Select` class to work with dropdowns.
+```java
+import org.openqa.selenium.support.ui.Select;
+
+WebElement dropdown = driver.findElement(By.id("country"));
+Select select = new Select(dropdown);
+select.selectByVisibleText("India");  // Select by text
+select.selectByIndex(2);  // Select by index
+select.selectByValue("IN");  // Select by value
+```
+
+### **6. Handling Links**
+Use `click()` to interact with a link.
+
+```java
+WebElement link = driver.findElement(By.linkText("Sign Up"));
+link.click();
+```
+
+**Alternative:**
+```java
+driver.findElement(By.partialLinkText("Sign")).click();
+```
+
+### **7. Handling Alerts & Pop-ups**
+Use `Alert` class for JavaScript alerts.
+
+```java
+import org.openqa.selenium.Alert;
+
+Alert alert = driver.switchTo().alert();
+alert.accept();  // Click OK
+alert.dismiss();  // Click Cancel
+alert.sendKeys("Input text");  // Enter text in prompt
+```
+
+### **8. Handling Frames**
+Switch to a frame using `switchTo()`.
+```java
+driver.switchTo().frame("frameName");  // By name
+driver.switchTo().frame(0);  // By index
+driver.switchTo().frame(driver.findElement(By.xpath("//iframe")));  // By WebElement
+```
+
+**Switch back to the default page:**
+```java
+driver.switchTo().defaultContent();
+```
+
+### **9. Handling Windows & Tabs**
+Switch to a new window/tab using `getWindowHandles()`.
+```java
+String parentWindow = driver.getWindowHandle();
+Set<String> windows = driver.getWindowHandles();
+
+for (String window : windows) {
+    if (!window.equals(parentWindow)) {
+        driver.switchTo().window(window);
+    }
+}
+```
+
+## **10. Handling Mouse Hover (Actions Class)**
+Use `Actions` class for mouse interactions.
+
+```java
+import org.openqa.selenium.interactions.Actions;
+
+Actions actions = new Actions(driver);
+WebElement element = driver.findElement(By.id("menu"));
+actions.moveToElement(element).perform();  // Hover over the element
+```
 
