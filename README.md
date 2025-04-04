@@ -51,7 +51,7 @@ To use Selenium effectively, you need:
 - It is **widely used** for **functional testing, regression testing, and cross-browser testing**.
 - Supports **multiple languages** (Java, Python, C#, etc.).
 - Used by companies to **automate testing and save manual effort**.
-- 
+  
 ## **Launching Chrome and Firefox Browsers Using Selenium WebDriver**
 
 Selenium WebDriver allows us to automate web browsers like **Chrome and Firefox**. The key steps involved in setting up and running Selenium WebDriver are as follows:
