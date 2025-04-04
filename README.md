@@ -23,23 +23,17 @@ Selenium consists of multiple components, each serving a different purpose:
    - Supports **distributed execution** of test cases.
    - Useful for **cross-browser testing**.
 
-
-
 ## **History of Selenium**
 - **Founder**: **Jason Huggins** (Created Selenium in **2004-2005**).  
 - **Selenium RC** was the first version released as an **open-source tool**.  
 - **Paul Hammant, Simon Stewart, and Philippe Hanrigou** contributed to making Selenium **more advanced**.
 - Selenium **WebDriver replaced Selenium RC** due to better performance.
 
----
-
 ## **Why is it Named Selenium?**
 Selenium got its name **as a joke**!  
 - Mercury (a competitor of Selenium) was another automation tool.  
 - **Selenium is a chemical element used to neutralize mercury poisoning**.  
 - The name **Selenium** was chosen to mock the competitors.
-
----
 
 ## **Requirements to Use Selenium**
 To use Selenium effectively, you need:
@@ -58,8 +52,6 @@ To use Selenium effectively, you need:
    - If using a **normal Java project**, you need to **import Selenium JAR files** manually.
    - If using **Maven**, you can add the **Selenium dependency** in `pom.xml`.
 
----
-
 ## **Selenium WebDriver Usage**
 - Can **launch web browsers** like **Chrome, Firefox, Edge, etc.**.
 - Uses browser-specific **drivers** (e.g., ChromeDriver for Chrome).
@@ -68,8 +60,6 @@ To use Selenium effectively, you need:
   - Filling forms
   - Scrolling pages
   - Extracting data
-
----
 
 ## **Note**
 - Selenium is a **powerful tool for web automation**.
