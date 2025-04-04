@@ -117,7 +117,7 @@ This program demonstrates **finding elements using different strategies and high
 
 ### **Concepts Related to Handling Textboxes in Selenium**
 Handling textboxes in Selenium WebDriver involves various operations such as locating, entering text, retrieving text, clearing text, and verifying properties. Below are the key concepts:
-## **1. Locating a Textbox Element**
+ **1. Locating a Textbox Element**
 Before interacting with a textbox, it must be located on the webpage using **locators** like `id`, `name`, `className`, `XPath`, or `CSS Selector`.
 ### **Example: Locating Using Different Locators**
 ```java
@@ -126,7 +126,7 @@ WebElement textboxByName = driver.findElement(By.name("username")); // Using nam
 WebElement textboxByXPath = driver.findElement(By.xpath("//input[@id='username']")); // Using XPath
 WebElement textboxByCss = driver.findElement(By.cssSelector("input#username")); // Using CSS Selector
 ```
-## **2. Entering Text in a Textbox**
+ **2. Entering Text in a Textbox**
 To enter text into a textbox, use the **`sendKeys()`** method.
 ```java
 textboxById.sendKeys("CharanTeja");
@@ -138,12 +138,12 @@ To get the entered text, use **`getAttribute("value")`**.
 String enteredText = textboxById.getAttribute("value");
 System.out.println("Entered Text: " + enteredText);
 ```
-## **4. Clearing Text from a Textbox**
+**4. Clearing Text from a Textbox**
 To remove any existing text, use the **`clear()`** method.
 ```java
 textboxById.clear();
 ```
-## **5. Checking If a Textbox is Displayed and Enabled**
+ **5. Checking If a Textbox is Displayed and Enabled**
 Before interacting with a textbox, verify if it is visible and enabled.
 ```java
 if (textboxById.isDisplayed() && textboxById.isEnabled()) {
@@ -154,7 +154,7 @@ if (textboxById.isDisplayed() && textboxById.isEnabled()) {
 ```
 - **`isDisplayed()`** → Checks if the textbox is visible on the UI.
 - **`isEnabled()`** → Checks if the textbox is interactive (not disabled).
-## **6. Handling Textbox Using Explicit Wait**
+ **6. Handling Textbox Using Explicit Wait**
 Instead of using `Thread.sleep()`, Selenium provides **Explicit Waits** to wait until a textbox is available.
 ```java
 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -162,13 +162,13 @@ WebElement textbox = wait.until(ExpectedConditions.visibilityOfElementLocated(By
 textbox.sendKeys("CharanTeja");
 ```
 This ensures the textbox is **visible** before sending input.
-## **7. Verifying Placeholder Text**
+**7. Verifying Placeholder Text**
 Some textboxes have placeholder text (default text). You can retrieve it using `getAttribute("placeholder")`.
 ```java
 String placeholderText = textboxById.getAttribute("placeholder");
 System.out.println("Placeholder: " + placeholderText);
 ```
-## **8. Handling Read-Only or Disabled Textboxes**
+**8. Handling Read-Only or Disabled Textboxes**
 Some textboxes may be **read-only** or **disabled**, preventing input.
 ```java
 if (!textboxById.isEnabled()) {
@@ -178,13 +178,13 @@ if (textboxById.getAttribute("readonly") != null) {
     System.out.println("Textbox is read-only");
 }
 ```
-## **9. Handling Hidden Textboxes**
+**9. Handling Hidden Textboxes**
 Some textboxes might be hidden using CSS (`display: none;` or `visibility: hidden;`). Use JavaScript to interact with them.
 ```java
 JavascriptExecutor js = (JavascriptExecutor) driver;
 js.executeScript("arguments[0].value='CharanTeja';", textboxById);
 ```
- ## 10. Simulating Keyboard Actions in a Textbox
+ 10. Simulating Keyboard Actions in a Textbox
 Use the **Actions class** to simulate keyboard events (e.g., pressing Enter or Backspace).
 ```java
 Actions actions = new Actions(driver);
