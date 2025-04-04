@@ -120,8 +120,6 @@ This program demonstrates **finding elements using different strategies and high
 
 Handling textboxes in Selenium WebDriver involves various operations such as locating, entering text, retrieving text, clearing text, and verifying properties. Below are the key concepts:
 
-
-
 ## **1. Locating a Textbox Element**
 Before interacting with a textbox, it must be located on the webpage using **locators** like `id`, `name`, `className`, `XPath`, or `CSS Selector`.
 
@@ -142,8 +140,6 @@ textboxById.sendKeys("CharanTeja");
 ```
 This simulates typing the text into the input field.
 
-
-
 ## **3. Retrieving Text from a Textbox**
 To get the entered text, use **`getAttribute("value")`**.
 
@@ -152,16 +148,12 @@ String enteredText = textboxById.getAttribute("value");
 System.out.println("Entered Text: " + enteredText);
 ```
 
----
-
 ## **4. Clearing Text from a Textbox**
 To remove any existing text, use the **`clear()`** method.
 
 ```java
 textboxById.clear();
 ```
-
----
 
 ## **5. Checking If a Textbox is Displayed and Enabled**
 Before interacting with a textbox, verify if it is visible and enabled.
