@@ -94,14 +94,14 @@ WebElement submitButton = driver.findElement(By.cssSelector(".btn-primary"));
 - We can **download ChromeDriver** and set up WebDriver for browser automation.
 - Web elements can be found using different **locators** like ID, Name, XPath, and CSS Selectors.
 - **Selenium 4.6+ has automatic WebDriver setup**, reducing manual effort.
-#### Explanation of  WebElementsFinding stratagies code
-**1. Setting Up Selenium WebDriver**
+#### **Explanation of  WebElementsFinding stratagies code**
+## 1. Setting Up Selenium WebDriver
 - We use **WebDriverManager** to automatically handle ChromeDriver setup.
 - `WebDriver driver = new ChromeDriver();` launches the Chrome browser.
-#### **2. Navigating to a Web Page**
+#### 2. Navigating to a Web Page
 - `driver.get("https://www.google.com/");` opens Google.
 - `driver.get("https://github.com/login");` navigates to GitHub’s login page.
-#### **3. Locating Web Elements Using Different Locators**
+#### 3. Locating Web Elements Using Different Locators
 - **By ID** → `By.id("login_field")`
 - **By Name** → `By.name("password")`
 - **By Class Name** → `By.className("header-logo")`
@@ -110,9 +110,9 @@ WebElement submitButton = driver.findElement(By.cssSelector(".btn-primary"));
 - **By Tag Name** → `By.tagName("h1")`
 - **By XPath** → `By.xpath("//label[contains(text(),'Username or email address')]")`
 - **By CSS Selector** → `By.cssSelector("input[name='commit']")`
-#### **4. Highlighting Elements**
+#### 4. Highlighting Elements
 - The `highlight()` method uses **JavaScript Executor** to apply a **red border and yellow background** to web elements.
-#### **5. Closing the Browser**
+#### 5. Closing the Browser
 - `driver.quit();` closes the browser session.
 This program demonstrates **finding elements using different strategies and highlighting them dynamically.** 🚀
 
