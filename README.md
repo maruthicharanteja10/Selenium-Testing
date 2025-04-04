@@ -115,3 +115,120 @@ WebElement submitButton = driver.findElement(By.cssSelector(".btn-primary"));
 #### **5. Closing the Browser**
 - `driver.quit();` closes the browser session.
 This program demonstrates **finding elements using different strategies and highlighting them dynamically.** 🚀
+
+### **Concepts Related to Handling Textboxes in Selenium**
+
+Handling textboxes in Selenium WebDriver involves various operations such as locating, entering text, retrieving text, clearing text, and verifying properties. Below are the key concepts:
+
+
+
+## **1. Locating a Textbox Element**
+Before interacting with a textbox, it must be located on the webpage using **locators** like `id`, `name`, `className`, `XPath`, or `CSS Selector`.
+
+### **Example: Locating Using Different Locators**
+```java
+WebElement textboxById = driver.findElement(By.id("username")); // Using id
+WebElement textboxByName = driver.findElement(By.name("username")); // Using name
+WebElement textboxByXPath = driver.findElement(By.xpath("//input[@id='username']")); // Using XPath
+WebElement textboxByCss = driver.findElement(By.cssSelector("input#username")); // Using CSS Selector
+```
+
+
+## **2. Entering Text in a Textbox**
+To enter text into a textbox, use the **`sendKeys()`** method.
+
+```java
+textboxById.sendKeys("CharanTeja");
+```
+This simulates typing the text into the input field.
+
+
+
+## **3. Retrieving Text from a Textbox**
+To get the entered text, use **`getAttribute("value")`**.
+
+```java
+String enteredText = textboxById.getAttribute("value");
+System.out.println("Entered Text: " + enteredText);
+```
+
+---
+
+## **4. Clearing Text from a Textbox**
+To remove any existing text, use the **`clear()`** method.
+
+```java
+textboxById.clear();
+```
+
+---
+
+## **5. Checking If a Textbox is Displayed and Enabled**
+Before interacting with a textbox, verify if it is visible and enabled.
+
+```java
+if (textboxById.isDisplayed() && textboxById.isEnabled()) {
+    textboxById.sendKeys("CharanTeja");
+} else {
+    System.out.println("Textbox is either not visible or disabled");
+}
+```
+- **`isDisplayed()`** → Checks if the textbox is visible on the UI.
+- **`isEnabled()`** → Checks if the textbox is interactive (not disabled).
+
+## **6. Handling Textbox Using Explicit Wait**
+Instead of using `Thread.sleep()`, Selenium provides **Explicit Waits** to wait until a textbox is available.
+
+```java
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+WebElement textbox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
+textbox.sendKeys("CharanTeja");
+```
+This ensures the textbox is **visible** before sending input.
+
+---
+
+## **7. Verifying Placeholder Text**
+Some textboxes have placeholder text (default text). You can retrieve it using `getAttribute("placeholder")`.
+
+```java
+String placeholderText = textboxById.getAttribute("placeholder");
+System.out.println("Placeholder: " + placeholderText);
+```
+
+## **8. Handling Read-Only or Disabled Textboxes**
+Some textboxes may be **read-only** or **disabled**, preventing input.
+
+```java
+if (!textboxById.isEnabled()) {
+    System.out.println("Textbox is disabled");
+}
+if (textboxById.getAttribute("readonly") != null) {
+    System.out.println("Textbox is read-only");
+}
+```
+
+## **9. Handling Hidden Textboxes**
+Some textboxes might be hidden using CSS (`display: none;` or `visibility: hidden;`). Use JavaScript to interact with them.
+
+```java
+JavascriptExecutor js = (JavascriptExecutor) driver;
+js.executeScript("arguments[0].value='CharanTeja';", textboxById);
+```
+
+## **10. Simulating Keyboard Actions in a Textbox**
+Use the **Actions class** to simulate keyboard events (e.g., pressing Enter or Backspace).
+
+```java
+Actions actions = new Actions(driver);
+actions.sendKeys(textboxById, Keys.ENTER).perform();
+```
+
+### **Conclusion**
+Handling textboxes in Selenium involves:
+✔️ Locating elements using different locators  
+✔️ Entering, retrieving, and clearing text  
+✔️ Checking visibility, enablement, and read-only state  
+✔️ Using Explicit Waits for synchronization  
+✔️ Interacting with hidden or disabled textboxes using JavaScript  
+
