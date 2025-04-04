@@ -46,6 +46,7 @@ To use Selenium effectively, you need:
   - Filling forms
   - Scrolling pages
   - Extracting data
+  
 **Note**
 - Selenium is a **powerful tool for web automation**.
 - It is **widely used** for **functional testing, regression testing, and cross-browser testing**.
@@ -55,7 +56,7 @@ To use Selenium effectively, you need:
 ## **Launching Chrome and Firefox Browsers Using Selenium WebDriver**
 
 Selenium WebDriver allows us to automate web browsers like **Chrome and Firefox**. The key steps involved in setting up and running Selenium WebDriver are as follows:
-## 1. Setting Up WebDriver for Chrome
+#### 1. Setting Up WebDriver for Chrome
 To launch a Chrome browser using Selenium WebDriver, use the following Java code:
 ```java
 WebDriver driver = new ChromeDriver();
@@ -68,7 +69,7 @@ driver.get("http://www.google.com");
 2. **Dependency Handling**
    - If using **Selenium 4.6+**, there is **no need** to set the property for ChromeDriver manually.
    - WebDriver **Manager** will automatically handle the driver setup.
-## **2. Finding Web Elements in a Web Page**
+#### **2. Finding Web Elements in a Web Page**
 To interact with a web page, Selenium WebDriver needs to **find elements** (buttons, text fields, links, etc.).
 ### **Different Locators in Selenium WebDriver**
 There are **8 locators** that help identify elements:
@@ -89,7 +90,8 @@ WebElement signupLink = driver.findElement(By.linkText("Sign Up"));
 WebElement menu = driver.findElement(By.className("menu"));
 WebElement submitButton = driver.findElement(By.cssSelector(".btn-primary"));
 ```
-## **Note**
+
+**Note**
 - Selenium WebDriver is used to **automate Chrome and Firefox browsers**.
 - We can **download ChromeDriver** and set up WebDriver for browser automation.
 - Web elements can be found using different **locators** like ID, Name, XPath, and CSS Selectors.
