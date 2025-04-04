@@ -115,11 +115,11 @@ WebElement submitButton = driver.findElement(By.cssSelector(".btn-primary"));
 - `driver.quit();` closes the browser session.
 This program demonstrates **finding elements using different strategies and highlighting them dynamically.** 🚀
 
-### **Concepts Related to Handling Textboxes in Selenium**
+#### **Concepts Related to Handling Textboxes in Selenium**
 Handling textboxes in Selenium WebDriver involves various operations such as locating, entering text, retrieving text, clearing text, and verifying properties. Below are the key concepts:
  **1. Locating a Textbox Element**
 -- Before interacting with a textbox, it must be located on the webpage using **locators** like `id`, `name`, `className`, `XPath`, or `CSS Selector`.
-### **Example: Locating Using Different Locators**
+## **Example: Locating Using Different Locators**
 ```java
 WebElement textboxById = driver.findElement(By.id("username")); // Using id
 WebElement textboxByName = driver.findElement(By.name("username")); // Using name
@@ -143,6 +143,7 @@ System.out.println("Entered Text: " + enteredText);
 ```java
 textboxById.clear();
 ```
+
  **5. Checking If a Textbox is Displayed and Enabled**
 Before interacting with a textbox, verify if it is visible and enabled.
 ```java
@@ -154,6 +155,7 @@ if (textboxById.isDisplayed() && textboxById.isEnabled()) {
 ```
 - **`isDisplayed()`** → Checks if the textbox is visible on the UI.
 - **`isEnabled()`** → Checks if the textbox is interactive (not disabled).
+  
  **6. Handling Textbox Using Explicit Wait**
 -- Instead of using `Thread.sleep()`, Selenium provides **Explicit Waits** to wait until a textbox is available.
 ```java
