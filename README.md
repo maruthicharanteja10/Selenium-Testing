@@ -184,7 +184,7 @@ Some textboxes might be hidden using CSS (`display: none;` or `visibility: hidde
 JavascriptExecutor js = (JavascriptExecutor) driver;
 js.executeScript("arguments[0].value='CharanTeja';", textboxById);
 ```
- **10. Simulating Keyboard Actions in a Textbox**
+ ## 10. Simulating Keyboard Actions in a Textbox
 Use the **Actions class** to simulate keyboard events (e.g., pressing Enter or Backspace).
 ```java
 Actions actions = new Actions(driver);
