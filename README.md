@@ -1,28 +1,21 @@
 ### **Introduction to Selenium**
 Selenium is an **open-source tool** used for **automating web applications**. It allows testers and developers to control web browsers programmatically, making it an essential tool for web automation testing.
-
-
 ## **Selenium Suite**
 Selenium consists of multiple components, each serving a different purpose:
-
 1. **Selenium IDE (Integrated Development Environment)**  
    - A **record and playback** tool used for **quick automation**.
    - Suitable for beginners but **not for complex test automation**.
-
 2. **Selenium RC (Remote Control) [Deprecated]**  
    - Used to write test scripts in different programming languages.  
    - **No longer supported** because **WebDriver replaced it**.
-
 3. **Selenium WebDriver**  
    - **Most commonly used component** for automation.  
    - Interacts directly with web browsers.  
    - Supports **parallel execution** and different programming languages like **Java, Python, C#, etc.**.
-
 4. **Selenium Grid**  
    - Helps in running tests **in parallel** on multiple machines/browsers.
    - Supports **distributed execution** of test cases.
    - Useful for **cross-browser testing**.
-
 ## **History of Selenium**
 - **Founder**: **Jason Huggins** (Created Selenium in **2004-2005**).  
 - **Selenium RC** was the first version released as an **open-source tool**.  
