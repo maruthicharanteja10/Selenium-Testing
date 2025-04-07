@@ -323,7 +323,7 @@ for (String window : windows) {
 }
 ```
 
-## **10. Handling Mouse Hover (Actions Class)**
+### **10. Handling Mouse Hover (Actions Class)**
 Use `Actions` class for mouse interactions.
 
 ```java
@@ -377,11 +377,5 @@ Dropdowns are commonly used in web applications for selecting an item from a lis
 - Use **scrolling actions** if options are not initially visible on the screen.
 - Handle **multi-select dropdowns** by checking if multiple selections are allowed using `isMultiple()` method (for standard dropdowns).
 
-### ⚠️ Common Issues
-
-- Hidden or dynamically loaded elements
-- Dropdowns that close too quickly
-- Options not interactable due to visibility or overlay
-- Selecting wrong option due to similar text
 
 
