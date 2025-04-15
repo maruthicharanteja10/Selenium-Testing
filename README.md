@@ -515,3 +515,32 @@ driver.switchTo().parentFrame(); // Goes to parent frame
 - Interacting with ad frames or payment gateways.
 
 
+## 📸 Capturing Screenshots in Selenium WebDriver
+### 🔹 **Why Take Screenshots?**
+- To record **test results**, especially failures.
+- For **debugging** UI issues.
+- For maintaining **test evidence** in reports.
+### 🔧 **How Screenshots Work in Selenium**
+- Selenium provides a built-in interface called **`TakesScreenshot`**.
+- It captures the **visible part of the web page**.
+### 🧰 **Steps to Capture a Screenshot**
+1. **Cast WebDriver to TakesScreenshot**
+2. **Call `getScreenshotAs()` method**
+3. **Save the image file to a location**
+### 📂 **File Format**
+- The screenshot is typically saved in **`.png`** format.
+### 📝 **Key Method**
+```java
+File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+```
+### ✅ **Best Practices**
+- Store screenshots in a dedicated `screenshots/` folder.
+- Use **timestamped filenames** to avoid overwriting.
+- Integrate with **test frameworks** (JUnit/TestNG) for automatic capture on failure.
+- Consider **full-page screenshot tools** for capturing the entire page (e.g., AShot).
+### 🧪 **Use Cases**
+- Capturing a screenshot on test failure.
+- Taking snapshots of each step in a test.
+- Comparing UI changes visually over time.
+
+
