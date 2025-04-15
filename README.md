@@ -435,5 +435,45 @@ Web-based applications sometimes use JavaScript alerts to interact with users. S
 - For prompt alerts, use `sendKeys()` before `accept()` to enter text.
 
 
+##  Handling Single, Multiple Tabs & Windows in Selenium
+### 🔹 **1. What Are Windows and Tabs in Selenium?**
+
+- **Window/Tab**: A browser instance (could be a new tab or a popup window).
+- Every window or tab has a **unique handle (ID)**.
+
+> You can switch between tabs/windows using their **window handle**.
+
+### 🔹 **2. Key Methods**
+
+| Method                            | Description                                       |
+|----------------------------------|---------------------------------------------------|
+| `getWindowHandle()`              | Gets the current (parent) window handle           |
+| `getWindowHandles()`             | Returns a set of all open window handles          |
+| `switchTo().window(handle)`      | Switches control to a specific window or tab      |
+| `close()`                        | Closes the current tab/window                     |
+| `quit()`                         | Closes all browser windows and ends the session   |
+
+### 🔹 **3. Handling a Single Window/Tab**
+- Selenium automatically starts in one tab.
+- You interact with it normally using standard WebDriver commands.
+
+### 🔹 **4. Handling Multiple Tabs/Windows**
+#### ✅ Steps:
+1. **Trigger the new tab/window** (click a link or button).
+2. **Get all window handles** using `getWindowHandles()`.
+3. **Switch to the new handle** using `switchTo().window(handle)`.
+4. Perform actions in the new tab/window.
+5. Optionally **switch back** to the parent window.
+
+### 🧠 **Important Notes**
+- **Window handles are unordered**, so use a loop or list to access them predictably.
+- Always **store the parent window handle** before opening a new tab/window.
+- You must **switch to a new tab** before performing actions in it.
+
+### 🧪 Example Use Cases
+- Switching to a payment popup window.
+- Handling terms and conditions or help links that open in a new tab.
+- Managing login windows that appear separately.
+
 
 
