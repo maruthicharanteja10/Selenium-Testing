@@ -476,4 +476,42 @@ Web-based applications sometimes use JavaScript alerts to interact with users. S
 - Managing login windows that appear separately.
 
 
+## 🖼️ Handling Frames in Selenium WebDriver 
+### 🔹 **What is a Frame?**
+- A **frame (or iframe)** is an HTML document embedded inside another HTML document.
+- Web pages use frames to embed content like ads, forms, videos, or widgets.
+- Selenium cannot access elements inside a frame directly—you must **switch into the frame first**.
+### 🔑 **Why Handle Frames?**
+- To interact with elements **inside** the frame (click, send keys, read text, etc.).
+- Failing to switch into a frame before interacting causes **`NoSuchElementException`**.
+### 🔧 **Switching into a Frame**
+You can switch to a frame using:
+1. **By Index** – Based on frame order in the page.
+2. **By Name or ID** – If the frame has a `name` or `id` attribute.
+3. **By WebElement** – Locate the frame as a web element, then switch.
+
+```java
+driver.switchTo().frame(0); // By index
+driver.switchTo().frame("frameName"); // By name or ID
+driver.switchTo().frame(driver.findElement(By.tagName("iframe"))); // By WebElement
+```
+### 🔁 **Switching Back to Main Page**
+- To go back to the main (default) content after working inside a frame:
+```java
+driver.switchTo().defaultContent(); // Goes to main document
+```
+
+- To go **one level up**, use:
+```java
+driver.switchTo().parentFrame(); // Goes to parent frame
+```
+### ✅ **Best Practices**
+- Always check if the page uses frames (`iframe` tags).
+- Use explicit waits if the frame or its contents load dynamically.
+- Prefer using frame **WebElement** if frames don't have clear names or IDs.
+### 🧪 **Common Use Cases**
+- Working with embedded forms (like Google Forms).
+- Automating video players (YouTube iframes).
+- Interacting with ad frames or payment gateways.
+
 
