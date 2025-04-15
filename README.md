@@ -410,4 +410,30 @@ Navigation in Selenium refers to controlling the browser's history stack and cur
 - Combine navigation with waits to ensure reliable test execution.
 - Use back/forward actions only when you have a clear navigation flow.
 
+##  Handling Alerts in Selenium WebDriver
+Web-based applications sometimes use JavaScript alerts to interact with users. Selenium can handle these alerts using the **`Alert` interface**.
+### 📋 **Types of Alerts**
+1. **Simple Alert**  
+   - Contains only an OK button.  
+   - Used for displaying information.
+2. **Confirmation Alert**  
+   - Contains OK and Cancel buttons.  
+   - Used to confirm user decisions.
+3. **Prompt Alert**  
+   - Contains a text box with OK and Cancel buttons.  
+   - Used to get user input.
+### 📌 **Alert Handling Methods**
+- `driver.switchTo().alert()` → Switches to the alert.
+- `alert.accept()` → Clicks OK.
+- `alert.dismiss()` → Clicks Cancel.
+- `alert.getText()` → Gets the alert message.
+- `alert.sendKeys("text")` → Enters text into a prompt.
+### 💡 **Notes**
+- Always **switch to the alert** before interacting with it.
+- If an alert is not present, calling `driver.switchTo().alert()` will throw a `NoAlertPresentException`.
+- Use **explicit waits** (like `WebDriverWait`) when alert appearance is delayed.
+- For prompt alerts, use `sendKeys()` before `accept()` to enter text.
+
+
+
 
