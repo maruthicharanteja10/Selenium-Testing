@@ -544,3 +544,38 @@ File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 - Comparing UI changes visually over time.
 
 
+## 🕒 `pageLoadTimeout` in Selenium WebDriver
+### 🔹 **What is `pageLoadTimeout`?**
+- It sets the **maximum time Selenium will wait** for a **web page to load**.
+- If the page **doesn’t load within the specified time**, a **`TimeoutException`** is thrown.
+### 📌 **Syntax**
+```java
+driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+```
+> 💡 `Duration` is used from Java 8+ (`java.time.Duration`)
+### 🧠 **Why Use It?**
+- Prevents your tests from **hanging forever** if a page fails to load.
+- Helps catch slow or broken pages early in automation runs.
+### ✅ **Key Points**
+- It only applies to **full page loads**, like `driver.get(url)` or `navigate().to(url)`.
+- If the page loads **after** the timeout, Selenium throws `TimeoutException`.
+- Works in combination with **implicit/explicit waits** but controls the page loading behavior.
+### 📌 **Example Usage**
+```java
+WebDriver driver = new ChromeDriver();
+driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+driver.get("https://example.com");
+```
+### ⚠️ **Exception Handling**
+```java
+try {
+    driver.get("https://example.com");
+} catch (TimeoutException e) {
+    System.out.println("Page load timed out!");
+}
+```
+### 🧪 **Common Use Cases**
+- Testing websites with **slow network conditions**.
+- Validating **error handling** for pages that fail to load.
+- Ensuring **test stability** in CI/CD environments.
+
