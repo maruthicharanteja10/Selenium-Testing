@@ -379,8 +379,14 @@ Dropdowns are commonly used in web applications for selecting an item from a lis
 
 
 
-## **Handle Navigations in Selenium using Webbdriver**
+## **Navigations Handle in Selenium using Webbdriver**
 Navigation in Selenium refers to controlling the browser's history stack and current page — including moving to a different URL, going back, forward, or refreshing the page.
+-- get() opens the initial page.
+-- navigate().to() loads a new URL (similar to get() but more flexible).
+-- navigate().back() goes to the previous page.
+-- navigate().forward() goes to the next page (if back() was used).
+-- navigate().refresh() reloads the current page.
+-- quit() closes the browser session.
 ### 🧭 **Navigation vs Page Load**
 - **`navigate().to()`** and **`get()`** both open a new page.
 - The difference: `get()` waits for the full page to load, while `navigate().to()` is generally faster and used when moving between internal URLs or during redirection handling.
@@ -403,9 +409,5 @@ Navigation in Selenium refers to controlling the browser's history stack and cur
 - Prefer `navigate().to()` when switching URLs during an active session.
 - Combine navigation with waits to ensure reliable test execution.
 - Use back/forward actions only when you have a clear navigation flow.
-### 🧪 **Use Cases in Testing**
-- Multi-step form submissions.
-- Redirect verification.
-- Session and authentication tests.
-- Testing browser history handling.
+
 
