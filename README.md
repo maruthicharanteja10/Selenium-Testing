@@ -579,3 +579,42 @@ try {
 - Validating **error handling** for pages that fail to load.
 - Ensuring **test stability** in CI/CD environments.
 
+## **Implicit Wait Time in Selenium WebDriver**:
+
+### 🔹 What is Implicit Wait?
+- Implicit Wait is used to tell the WebDriver to wait for a certain amount of time **while trying to find an element** if it is not immediately available.
+
+### 🔹 Syntax (Java):
+```java
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+```
+
+> In older versions:
+```java
+driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+```
+### 🔹 Key Points:
+- It is applied **globally**: once set, it is applicable for the **entire WebDriver session**.
+- It waits for the **specified time** before throwing a `NoSuchElementException`.
+- It **does not wait** for conditions like element to be clickable or visible — for those, use **Explicit Wait**.
+### 🔹 When to Use:
+- When you're unsure about the exact load time of elements.
+- For pages where elements take some time to appear.
+### 🔹 Default Value:
+- The default implicit wait time is **0 seconds**.
+### 🔹 Example:
+```java
+WebDriver driver = new ChromeDriver();
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+driver.get("https://example.com");
+WebElement element = driver.findElement(By.id("username"));
+```
+### 🔹 Pros:
+- Simple to use.
+- Automatically applied to all elements.
+### 🔹 Cons:
+- Can **slow down test execution** if overused.
+- May cause **unexpected wait times**.
+- Not suitable for complex conditions.
+
+
