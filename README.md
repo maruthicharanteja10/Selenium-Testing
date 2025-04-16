@@ -617,4 +617,76 @@ WebElement element = driver.findElement(By.id("username"));
 - May cause **unexpected wait times**.
 - Not suitable for complex conditions.
 
+## 🔶 **Explicit Wait in Selenium WebDriver**
+### ✅ **What is Explicit Wait?**
+Explicit Wait is used to **wait for a specific condition to occur** before proceeding with the next step in the code.
+
+Unlike **Implicit Wait** (which waits for the presence of elements), **Explicit Wait** lets you wait for:
+- An element to be clickable
+- Visibility of an element
+- Presence of an element in the DOM
+- Invisibility of an element
+- And other expected conditions
+
+### ✅ **Why Use Explicit Wait?**
+Web applications often load elements dynamically via JavaScript or AJAX. Some elements may not be immediately available. Using **Explicit Wait** makes your script **more stable and reliable** by waiting until conditions are met.
+
+### ✅ **Syntax (Java Example using WebDriverWait and ExpectedConditions):**
+```java
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
+element.sendKeys("JohnDoe");
+```
+### ✅ **Common ExpectedConditions:**
+
+| Method | Description |
+|--------|-------------|
+| `visibilityOfElementLocated(By locator)` | Waits until element is visible on the page |
+| `elementToBeClickable(By locator)` | Waits until element is clickable |
+| `presenceOfElementLocated(By locator)` | Waits until element is present in DOM |
+| `titleContains(String title)` | Waits until page title contains given text |
+| `urlContains(String fraction)` | Waits until URL contains a specific string |
+| `invisibilityOfElementLocated(By locator)` | Waits until element disappears from the page |
+
+
+### ✅ **Real-Time Example: Login Button after AJAX Loading**
+Imagine you have a login form, and the **login button is enabled only after an AJAX call** finishes checking username availability.
+```java
+WebDriver driver = new ChromeDriver();
+driver.get("https://example.com/login");
+
+// Enter username
+driver.findElement(By.id("username")).sendKeys("testuser");
+
+// Explicit Wait for the login button to be clickable
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+WebElement loginBtn = wait.until(ExpectedConditions.elementToBeClickable(By.id("loginButton")));
+
+// Now click it
+loginBtn.click();
+```
+### ✅ **When to Use Explicit Wait:**
+- AJAX-heavy applications
+- Elements loaded after a specific event (like button enabling after filling a field)
+- To avoid **StaleElementReferenceException**
+### ✅ **Difference Between Implicit and Explicit Wait:**
+
+| Feature | Implicit Wait | Explicit Wait |
+|--------|----------------|----------------|
+| Scope | Global (applies to all elements) | Specific (applies to particular condition) |
+| Flexibility | Less flexible | Very flexible |
+| Condition-based | No | Yes |
+| Reusability | Not reusable | Can be reused with helper methods |
+
+
+### ✅ **Helper Method Example (Reusable):**
+
+```java
+public WebElement waitForVisibility(By locator, int timeoutInSeconds) {
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+    return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+}
+```
+
+
 
