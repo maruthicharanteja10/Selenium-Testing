@@ -745,3 +745,64 @@ Use **implicit wait** for general stability, and use **explicit wait** when deal
 - Delayed buttons
 - Visibility issues
 
+
+
+## ✅ 1. `getTitle()`
+
+### 🔹 Description:
+- Retrieves the **title of the current web page**.
+- The title is the text shown in the browser tab and is defined in the `<title>` tag of the HTML.
+
+### 🔹 Syntax:
+```java
+String title = driver.getTitle();
+```
+
+### 🔹 Use Case:
+Useful for verifying the correct page is loaded — often used in assertions during testing.
+
+### 🔹 Example:
+```java
+System.out.println("Page Title: " + driver.getTitle());
+```
+
+## ✅ 2. `getCurrentUrl()`
+### 🔹 Description:
+- Returns the **current URL** loaded in the browser.
+
+### 🔹 Syntax:
+```java
+String currentUrl = driver.getCurrentUrl();
+```
+
+### 🔹 Use Case:
+Used to validate redirection, navigation, or that the expected URL is opened after clicking a link or submitting a form.
+
+### 🔹 Example:
+```java
+System.out.println("Current URL: " + driver.getCurrentUrl());
+```
+## ✅ 3. `getPageSource()`
+### 🔹 Description:
+- Retrieves the **entire HTML source code** of the current page as a string.
+### 🔹 Syntax:
+```java
+String pageSource = driver.getPageSource();
+```
+### 🔹 Use Case:
+Can be used to:
+- Debug content rendering issues.
+- Check presence of specific content/tags.
+- Perform source-level validations.
+### 🔹 Example:
+```java
+System.out.println("Page Source Length: " + driver.getPageSource().length());
+```
+### ✅ Summary Table
+
+| Method           | Returns                      | Use Case                               |
+|------------------|-------------------------------|----------------------------------------|
+| `getTitle()`     | Page title (String)           | Page validation                        |
+| `getCurrentUrl()`| Current URL (String)          | URL navigation checks                  |
+| `getPageSource()`| HTML source (String)          | Content validation/debugging           |
+
