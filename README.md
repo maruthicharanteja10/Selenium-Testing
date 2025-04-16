@@ -695,7 +695,7 @@ public WebElement waitForVisibility(By locator, int timeoutInSeconds) {
 You're testing a login page:
 - Username field: appears instantly.
 - Login button: gets **enabled only after** entering username & password (AJAX validation).
-## ✅ 1. **Implicit Wait Example (Global wait)**
+### ✅ 1. **Implicit Wait Example (Global wait)**
 ```java
 // 1. Set up WebDriver and Implicit Wait
 WebDriver driver = new ChromeDriver();
@@ -710,7 +710,7 @@ driver.findElement(By.id("password")).sendKeys("password123");
 driver.findElement(By.id("loginBtn")).click();
 ```
 🔸 **Problem:** If the `loginBtn` is not yet **clickable** (only present but disabled), this will fail or throw an exception.
-## ✅ 2. **Explicit Wait Example (Condition-based wait)**
+### ✅ 2. **Explicit Wait Example (Condition-based wait)**
 ```java
 // 1. Set up WebDriver
 WebDriver driver = new ChromeDriver();
@@ -728,7 +728,7 @@ WebElement loginBtn = wait.until(ExpectedConditions.elementToBeClickable(By.id("
 loginBtn.click();
 ```
 🔸 **Advantage:** Waits **only for login button** to become clickable. This is ideal for dynamic UI behavior.
-## 🔍 **Comparison Table:**
+### 🔍 **Comparison Table:**
 | Feature | Implicit Wait | Explicit Wait |
 |--------|----------------|----------------|
 | Wait Type | Global | Conditional |
@@ -738,7 +738,7 @@ loginBtn.click();
 | Best For | Static content | Dynamic / AJAX content |
 | Performance | May slow down | Optimized for targeted waits |
 
-## 🎯 **Real-World Tip:**
+### 🎯 **Real-World Tip:**
 Use **implicit wait** for general stability, and use **explicit wait** when dealing with:
 - AJAX popups
 - Loading spinners
