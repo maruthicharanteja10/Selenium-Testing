@@ -746,8 +746,8 @@ Use **implicit wait** for general stability, and use **explicit wait** when deal
 - Visibility issues
 
 
-
-## ✅ 1. `getTitle()`
+## Application properties
+### ✅ 1. `getTitle()`
 
 ### 🔹 Description:
 - Retrieves the **title of the current web page**.
@@ -766,7 +766,7 @@ Useful for verifying the correct page is loaded — often used in assertions dur
 System.out.println("Page Title: " + driver.getTitle());
 ```
 
-## ✅ 2. `getCurrentUrl()`
+### ✅ 2. `getCurrentUrl()`
 ### 🔹 Description:
 - Returns the **current URL** loaded in the browser.
 
@@ -782,7 +782,7 @@ Used to validate redirection, navigation, or that the expected URL is opened aft
 ```java
 System.out.println("Current URL: " + driver.getCurrentUrl());
 ```
-## ✅ 3. `getPageSource()`
+### ✅ 3. `getPageSource()`
 ### 🔹 Description:
 - Retrieves the **entire HTML source code** of the current page as a string.
 ### 🔹 Syntax:
