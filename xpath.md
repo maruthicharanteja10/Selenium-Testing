@@ -26,9 +26,62 @@ You can use XPath in:
 | 🕷 Web scraping      | Scrapy, BeautifulSoup (via lxml), Puppeteer |
 | 🧪 UI testing tools  | Katalon, TestComplete, UFT               |
 
-
 ### 🔹 Why XPath is Needed in Selenium?
 - Precise Element Location – Helps in locating elements that don’t have unique IDs or class names.
 - Handles Dynamic Elements – Useful when attributes are dynamic and change on each page load.
 - DOM Navigation – Can traverse up and down the DOM tree (parent → child, child → parent).
 - Flexible and Powerful – Allows complex queries using functions, conditions, and operators.
+
+
+## 🔍 **Types of XPath**
+XPath can be categorized into **two main types**:
+1. ✅ **Absolute XPath**  
+2. ✅ **Relative XPath**
+
+### ✅ 1. **Absolute XPath**
+- **Definition**:  
+  Absolute XPath is the full path from the root element (`html`) to the target element.
+- **Starts with**: `/` (single forward slash)
+- **Syntax**:  
+  ```xpath
+  /html/body/div[2]/div[1]/input
+  ```
+- **Example**:  
+  Suppose you want to access the username field in the following HTML:
+  ```html
+  <html>
+    <body>
+      <div>
+        <input type="text" name="username" />
+      </div>
+    </body>
+  </html>
+  ```
+  The absolute XPath will be:
+  ```xpath
+  /html/body/div/input
+  ```
+- **Pros**:
+  - Very straightforward if the structure never changes.
+- **Cons**:
+  - **Brittle** – breaks easily if the page structure changes.
+  - Not recommended for dynamic web pages.
+
+### ✅ 2. **Relative XPath**
+- **Definition**:  
+  Relative XPath starts from the current node or anywhere in the document.
+- **Starts with**: `//` (double forward slash)
+- **Syntax**:  
+  ```xpath
+  //tagname[@attribute='value']
+  ```
+- **Example**:  
+  ```xpath
+  //input[@name='username']
+  ```
+- **Pros**:
+  - More flexible and robust.
+  - Easier to maintain in dynamic web pages.
+- **Cons**:
+  - May require more knowledge of XPath functions and axes.
+
