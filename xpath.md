@@ -427,8 +427,6 @@ Axes are used to navigate through the XML/HTML tree in relation to the current n
 //div[@class='form-group']/descendant::input[@type='password']
 ```
 
----
-
 ### 🔹 Best Practices
 
 - Prefer **relative XPath** (`//tag`) over **absolute XPath** (`/html/body/...`)
