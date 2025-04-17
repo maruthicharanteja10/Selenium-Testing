@@ -806,3 +806,43 @@ System.out.println("Page Source Length: " + driver.getPageSource().length());
 | `getCurrentUrl()`| Current URL (String)          | URL navigation checks                  |
 | `getPageSource()`| HTML source (String)          | Content validation/debugging           |
 
+
+
+## 🧾  Get WebElement Properties using Selenium WebDriver 
+
+### 📌 1. **Getting Started**
+```java
+WebDriver driver = new ChromeDriver();
+driver.get("https://example.com");
+WebElement element = driver.findElement(By.id("exampleId"));
+```
+### 📋 2. **WebElement Property Methods**
+
+| **Property**           | **Method**                                | **Description**                                |
+|------------------------|--------------------------------------------|------------------------------------------------|
+| Text Content           | `element.getText()`                       | Gets visible text of the element               |
+| Attribute Value        | `element.getAttribute("name")`            | Gets value of a specific attribute (e.g., `href`, `value`) |
+| Tag Name               | `element.getTagName()`                    | Gets HTML tag (e.g., `input`, `button`)        |
+| CSS Property           | `element.getCssValue("property")`         | Gets value of a CSS property (e.g., `color`)   |
+| Location (X, Y)        | `element.getLocation()`                   | Gets element's position on the screen          |
+| Size (Width, Height)   | `element.getSize()`                       | Gets element's dimensions                      |
+| Is Displayed?          | `element.isDisplayed()`                   | Checks if element is visible                   |
+| Is Enabled?            | `element.isEnabled()`                     | Checks if element is interactable              |
+| Is Selected?           | `element.isSelected()`                    | Checks if radio/checkbox is selected           |
+
+### 🧪 3. **Example**
+```java
+WebElement btn = driver.findElement(By.id("submit"));
+
+System.out.println("Text: " + btn.getText());
+System.out.println("Tag: " + btn.getTagName());
+System.out.println("Color: " + btn.getCssValue("color"));
+System.out.println("X: " + btn.getLocation().getX());
+System.out.println("Width: " + btn.getSize().getWidth());
+System.out.println("Is Enabled: " + btn.isEnabled());
+System.out.println("Is Displayed: " + btn.isDisplayed());
+```
+### 🧼 4. **Close Driver**
+```java
+driver.quit();
+```
