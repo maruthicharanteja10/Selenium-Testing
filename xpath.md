@@ -150,7 +150,7 @@ Example:
 | Indexing           | `(//tag)[n]`| Selecting specific occurrence            | ✅ Yes     |
 
 
-## 🔑e XPath Using Attributes
+## 🔑 XPath Using Attributes
 Using **XPath with attributes** is one of the most common ways to locate web elements because:
 - HTML elements often have attributes like `id`, `name`, `class`, `type`, etc.
 - It helps target elements precisely when there are no unique IDs or names.
