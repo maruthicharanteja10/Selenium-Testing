@@ -247,3 +247,99 @@ element.sendKeys("test@example.com");
 | Readability     | Less readable                    | More readable                    |
 
 
+## **XPath Operators in Selenium WebDriver**
+
+### 1. **Basic Attribute Operator: `@`**
+- Selects element with specific attribute
+- Example:
+  ```xpath
+  //input[@type='text']
+  ```
+### 2. **Dot `.` Operator**
+- Refers to the **current node**
+- Example:  
+  ```xpath
+  .//span[@class='message']
+  ```
+
+### 3. **Double Slash `//`**
+
+- Selects nodes in the document from the current node that match the selection no matter where they are
+- Example:
+  ```xpath
+  //div//input
+  ```
+
+### 4. **Single Slash `/`**
+- Selects from the **root node** or a **direct child**
+- Example:
+  ```xpath
+  /html/body/div
+  ```
+### 5. **Wildcard `*`**
+
+- Matches any node
+- Example:
+  ```xpath
+  //*[@id='login']
+  ```
+### 6. **Logical Operators**
+- **`and`**
+  ```xpath
+  //input[@type='text' and @name='username']
+  ```
+- **`or`**
+  ```xpath
+  //input[@type='submit' or @name='btnLogin']
+  ```
+### 7. **Comparison Operators**
+
+| Operator | Meaning |
+|----------|---------|
+| `=`      | Equal   |
+| `!=`     | Not equal |
+| `<`      | Less than |
+| `>`      | Greater than |
+| `<=`     | Less than or equal |
+| `>=`     | Greater than or equal |
+
+Example:
+```xpath
+//input[@value!='Submit']
+```
+### 8. **Functions in XPath**
+#### a. **text()**
+```xpath
+//button[text()='Login']
+```
+#### b. **contains()**
+```xpath
+//input[contains(@name, 'user')]
+```
+#### c. **starts-with()**
+```xpath
+//input[starts-with(@id, 'email')]
+```
+
+#### d. **ends-with()** (Only available in XPath 2.0, not supported in Selenium directly)
+### 9. **Position-Based Operators**
+#### a. **position()**
+```xpath
+(//input[@type='text'])[position()=2]
+```
+#### b. **last()**
+```xpath
+(//input[@type='text'])[last()]
+```
+#### c. **[index]**
+```xpath
+(//input[@class='form-control'])[1]
+```
+
+## ✅ **Tips for Writing Robust XPath**
+- Prefer relative XPath over absolute.
+- Use `contains()` or `starts-with()` to handle dynamic values.
+- Use `position()` when there are multiple matching elements.
+- Use axes like `parent::`, `ancestor::`, `following-sibling::` for complex hierarchies.
+
+
