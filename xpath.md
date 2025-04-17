@@ -85,3 +85,68 @@ XPath can be categorized into **two main types**:
 - **Cons**:
   - May require more knowledge of XPath functions and axes.
 
+
+### 🔎 Additional XPath Expressions
+These are advanced techniques mainly used in **relative XPath**:
+###  **Using Attribute**
+```xpath
+//input[@id='email']
+```
+> Selects an `input` tag with `id='email'`.
+###  **Using `text()`**
+```xpath
+//button[text()='Login']
+```
+> Selects a button element with exact text `Login`.
+
+###  **Using `contains()`**
+```xpath
+//a[contains(text(), 'Register')]
+```
+> Matches any anchor tag with text containing the word "Register".
+
+###  **Using `starts-with()`**
+```xpath
+//input[starts-with(@name, 'user')]
+```
+> Matches inputs whose `name` starts with "user".
+
+###  **Using `and` / `or` conditions**
+```xpath
+//input[@type='text' and @name='username']
+```
+> Matches input elements that satisfy both conditions.
+
+###  **Using Indexes**
+```xpath
+(//input[@type='text'])[2]
+```
+> Selects the second input element of type text.
+
+###  **Using Axes (Advanced)**
+
+| Axis             | Description |
+|------------------|-------------|
+| `parent::`       | Select parent of the current node |
+| `child::`        | Select child nodes |
+| `ancestor::`     | Select all ancestors (parent, grandparent, etc.) |
+| `following-sibling::` | Select siblings after the current node |
+| `preceding-sibling::` | Select siblings before the current node |
+
+Example:
+```xpath
+//label[text()='Email']/following-sibling::input
+```
+> Finds the input field next to the label with text `Email`.
+
+### 📝 Summary Table
+
+| Type of XPath      | Starts With | Use Case                                | Flexible? |
+|--------------------|-------------|------------------------------------------|-----------|
+| Absolute XPath     | `/`         | Simple static pages                      | ❌ No      |
+| Relative XPath     | `//`        | Preferred in dynamic web apps            | ✅ Yes     |
+| Attribute Based    | `//tag[@attr='val']` | Common in form fields            | ✅ Yes     |
+| Functions (`contains`, etc.) | `//tag[contains()]` | Partial matching               | ✅ Yes     |
+| Indexing           | `(//tag)[n]`| Selecting specific occurrence            | ✅ Yes     |
+
+
