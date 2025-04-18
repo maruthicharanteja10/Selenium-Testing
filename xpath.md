@@ -435,4 +435,103 @@ Axes are used to navigate through the XML/HTML tree in relation to the current n
 - Use **functions** (`contains`, `starts-with`) for flexibility
 - Always test XPath using browser dev tools or plugins like **ChroPath**, **Selectorgadget**, or **XPath Helper**
 
+## ** XPath shortcuts and tips** to help you work more efficiently:
+
+### 🔹 **Basic XPath Syntax**
+```xpath
+//tagname[@attribute='value']
+```
+Example:
+```xpath
+//input[@id='username']
+```
+
+### 🔹 **XPath Shortcuts & Tricks**
+
+#### 1. **`//` — Selects nodes in the document from the current node that match the selection**
+```xpath
+//input       → Selects all `<input>` elements
+```
+
+#### 2. **`.` — Refers to the current node**
+```xpath
+.//a         → Selects all `<a>` elements under the current node
+```
+
+#### 3. **`@` — Selects an attribute**
+```xpath
+//input[@type='text']
+```
+
+#### 4. **`*` — Wildcard for any tag**
+```xpath
+//*[@id='login']  → Any tag with `id='login'`
+```
+
+
+### 🔹 **Text Matching**
+
+#### 5. **Exact text match**
+```xpath
+//button[text()='Login']
+```
+
+#### 6. **Contains (partial match)**
+```xpath
+//div[contains(text(),'Welcome')]
+```
+
+#### 7. **Starts-with**
+```xpath
+//input[starts-with(@id,'user')]
+```
+
+
+### 🔹 **XPath Axes (Navigation)**
+
+#### 8. **Parent**
+```xpath
+//label[@for='email']/parent::div
+```
+
+#### 9. **Child**
+```xpath
+//div[@class='form-group']/child::input
+```
+
+#### 10. **Ancestor**
+```xpath
+//input[@id='email']/ancestor::form
+```
+
+#### 11. **Following-Sibling**
+```xpath
+//label[text()='Username']/following-sibling::input
+```
+#### 12. **Preceding-Sibling**
+```xpath
+//input[@id='password']/preceding-sibling::label
+```
+### 🔹 **Logical Operators**
+
+#### 13. **AND**
+```xpath
+//input[@type='text' and @name='email']
+```
+
+#### 14. **OR**
+```xpath
+//input[@type='text' or @type='email']
+```
+### 🔹 **Indexing**
+
+#### 15. **Select the first element**
+```xpath
+(//input[@type='text'])[1]
+```
+
+#### 16. **Last element**
+```xpath
+(//input[@type='text'])[last()]
+```
 
