@@ -78,7 +78,7 @@ actions.moveToElement(menu).moveToElement(submenu).click().build().perform();
 ```
 
 
-## 🗓️ **Handling Calendars in Selenium 
+## 🗓️ Handling Calendars in Selenium 
 
 #### 1. **Types of Calendars**
 - **Static calendars**: All dates are present in the DOM and just shown/hidden using CSS/JS.
