@@ -556,4 +556,29 @@ Example:
 | `following-sibling::` | Next sibling elements | `//label/following-sibling::input` |
 | `preceding-sibling::` | Previous sibling elements | `//input/preceding-sibling::label` |
 
+## **popular third-party tools and browser extensions** that help with **XPath creation and testing** in Selenium WebDriver:
+
+### 🔧 **Top XPath Tools & Extensions**
+
+| **Tool/Extension** | **Browser** | **Description** |
+|--------------------|-------------|------------------|
+| **ChroPath** | Chrome, Edge | Helps generate unique XPath, CSS selectors, and test them on the fly. |
+| **SelectorsHub** | Chrome, Firefox, Edge | Advanced XPath and CSS selector tool. Supports iframe, shadow DOM, and dynamic IDs. Successor to ChroPath. |
+| **XPath Helper** | Chrome | Provides an interactive console to find and test XPath expressions. |
+| **Firebug + FirePath** *(Deprecated)* | Firefox | Classic combo used with old Firefox for XPath/CSS (no longer supported). |
+| **DevTools (Inspect Element)** | Chrome, Firefox | Built-in browser tools; right-click → Copy → Copy XPath or Copy Full XPath. |
+| **Katalon Recorder** | Chrome, Firefox | Selenium IDE alternative for recording tests and getting XPath locators. |
+| **Ranorex Selocity** | Chrome | Lightweight plugin for generating reliable XPath and CSS selectors. |
+| **Selenium IDE** | Chrome, Firefox | Record and playback tool from Selenium team, helps capture XPath too. |
+
+
+### 📝 **Recommended: SelectorsHub**
+
+- Auto-suggest XPath & CSS based on DOM
+- Supports iframe, shadow DOM
+- Smart editor with error suggestions
+- Works great with dynamic elements
+
+📍 **Official Site**: [https://selectorshub.com](https://selectorshub.com)
+
 
