@@ -534,4 +534,26 @@ Example:
 ```xpath
 (//input[@type='text'])[last()]
 ```
+### Here’s a **summary table** of commonly used XPath shortcuts and expressions in Selenium WebDriver:
+
+| **XPath Expression** | **Description** | **Example** |
+|----------------------|------------------|-------------|
+| `//tagname` | Selects all elements with the given tag | `//input` |
+| `//tag[@attr='val']` | Selects elements with specific attribute value | `//input[@id='email']` |
+| `//*` | Selects all elements | `//*` |
+| `.` | Current node | `.//a` (all `<a>` inside current node) |
+| `@attr` | Attribute selector | `//input[@type='text']` |
+| `contains()` | Partial match for attribute or text | `//div[contains(text(),'Hello')]` |
+| `starts-with()` | Starts with matching value | `//input[starts-with(@id,'user')]` |
+| `text()` | Match exact text | `//button[text()='Login']` |
+| `and` | Combines multiple conditions (all must be true) | `//input[@type='text' and @name='email']` |
+| `or` | Combines multiple conditions (any can be true) | `//input[@type='text' or @type='email']` |
+| `[index]` | Index-based selection (1-based) | `(//input[@type='text'])[1]` |
+| `[last()]` | Selects the last matching element | `(//input)[last()]` |
+| `parent::` | Selects the parent node | `//label[@for='email']/parent::div` |
+| `child::` | Selects direct children | `//div[@class='form']/child::input` |
+| `ancestor::` | Selects all ancestors (upward traversal) | `//input/ancestor::form` |
+| `following-sibling::` | Next sibling elements | `//label/following-sibling::input` |
+| `preceding-sibling::` | Previous sibling elements | `//input/preceding-sibling::label` |
+
 
