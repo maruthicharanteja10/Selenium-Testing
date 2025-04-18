@@ -435,7 +435,7 @@ Axes are used to navigate through the XML/HTML tree in relation to the current n
 - Use **functions** (`contains`, `starts-with`) for flexibility
 - Always test XPath using browser dev tools or plugins like **ChroPath**, **Selectorgadget**, or **XPath Helper**
 
-## ** XPath shortcuts and tips** to help you work more efficiently:
+## **XPath shortcuts and tips** to help you work more efficiently:
 
 ### 🔹 **Basic XPath Syntax**
 ```xpath
