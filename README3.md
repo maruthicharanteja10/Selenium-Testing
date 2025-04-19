@@ -133,3 +133,47 @@ WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 WebElement calendar = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("calendarId")));
 ```
 
+## JavaScript Executor
+In Selenium WebDriver, a **JavaScriptExecutor** is an interface that allows you to execute JavaScript code directly within the context of the browser that Selenium is controlling. It's very useful when Selenium's built-in methods are not sufficient to interact with certain elements or behaviors on a web page.
+
+### ✅ Interface:
+```java
+JavascriptExecutor js = (JavascriptExecutor) driver;
+```
+
+You can then use methods like:
+
+### 🧠 Common Methods:
+1. **`executeScript(String script, Object... args)`**  
+   Executes JavaScript in the context of the currently selected frame or window.
+   
+2. **`executeAsyncScript(String script, Object... args)`**  
+   Executes asynchronous JavaScript.
+
+### 📌 Example Use Cases:
+
+#### 1. Scroll the page:
+```java
+js.executeScript("window.scrollBy(0,500)");
+```
+
+#### 2. Click on a hidden element:
+```java
+js.executeScript("arguments[0].click();", element);
+```
+
+#### 3. Get page title using JS:
+```java
+String title = (String) js.executeScript("return document.title;");
+```
+
+#### 4. Set value in a text box:
+```java
+js.executeScript("arguments[0].value='test';", element);
+```
+
+### 🛠 Why Use JavaScriptExecutor?
+- When normal Selenium actions like `.click()` or `.sendKeys()` don’t work due to overlays, hidden elements, or JS-based interactions.
+- To manipulate the DOM directly.
+- To retrieve browser-specific or page-level properties not accessible via WebDriver.
+
