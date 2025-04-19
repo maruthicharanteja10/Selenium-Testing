@@ -387,3 +387,73 @@ js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'cente
 ### ⚠️ **Note:**
 - Use scrolls when elements are outside the viewport and Selenium throws errors like `ElementNotInteractableException`.
 - Always prefer `scrollIntoView()` for targeting elements.
+### 📒 **Selenium Manager in Selenium WebDriver** (from Selenium 4.6+)
+
+## 🧠 **Selenium Manager**
+
+**Selenium Manager** is a built-in utility introduced in **Selenium 4.6** that automatically manages browser driver executables like `chromedriver`, `geckodriver`, `msedgedriver`, etc.
+
+### ✅ **Before Selenium Manager (Manual Setup):**
+You had to manually:
+
+- Download the correct driver (e.g., `chromedriver.exe`)
+- Match it with your browser version
+- Set the path using `System.setProperty`
+
+```java
+System.setProperty("webdriver.chrome.driver", "path/to/chromedriver.exe");
+WebDriver driver = new ChromeDriver();
+```
+
+### ✅ **With Selenium Manager (Automatic Setup):**
+You **don’t need to set up drivers manually** anymore!
+
+```java
+WebDriver driver = new ChromeDriver(); // No need to set property
+```
+
+Selenium Manager will:
+- Detect your browser version
+- Download the compatible driver
+- Set the path automatically
+
+### 🌍 **How It Works Internally:**
+- Selenium Manager runs as a **native executable**.
+- It’s downloaded the first time you run Selenium 4.6+.
+- It finds your browser version and resolves the correct driver version.
+
+### 🔒 **Security:**
+It connects to the internet only to download drivers **once** and stores them in a cache (`.cache/selenium`).
+
+### 🔧 **Supported Browsers:**
+| Browser  | Supported? |
+|----------|------------|
+| Chrome   | ✅ Yes     |
+| Firefox  | ✅ Yes     |
+| Edge     | ✅ Yes     |
+| Safari   | 🚫 No (uses built-in WebDriver)
+
+### ⚠️ **Important Notes:**
+- Selenium Manager **requires internet** for the initial download.
+- It may not support **proxy-based environments** out of the box.
+
+### 🎯 **Advantages:**
+- No need for WebDriverManager (third-party library)
+- Fewer setup steps
+- Built-in and maintained by Selenium team
+
+### ✅ Example (Full Code with Selenium Manager):
+
+```java
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SeleniumManagerExample {
+    public static void main(String[] args) {
+        WebDriver driver = new ChromeDriver(); // Selenium Manager handles driver setup
+        driver.get("https://example.com");
+        System.out.println("Title: " + driver.getTitle());
+        driver.quit();
+    }
+}
+```
