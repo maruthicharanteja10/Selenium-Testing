@@ -457,3 +457,33 @@ public class SeleniumManagerExample {
     }
 }
 ```
+### Important Notes
+Here are concise answers to the questions about **Selenium Manager**:
+
+1. **What is Selenium Manager?**  
+   Selenium Manager is a feature introduced in Selenium 4.6+ that automatically manages browser driver binaries (like chromedriver, geckodriver).  
+   It eliminates the need to manually download and set paths for WebDriver executables.
+
+2. **Why do we need the Selenium Manager?**  
+   It simplifies test setup by handling the browser driver management internally.  
+   This reduces compatibility issues and setup overhead for test automation engineers.
+
+3. **How does Selenium Manager work or help?**  
+   At runtime, it detects the required driver for the browser and OS, downloads it if necessary, and sets the correct path automatically.  
+   It ensures that the appropriate version of the driver is always used.
+
+4. **Do we need an additional library in order to use the Selenium Manager?**  
+   No, Selenium Manager is built into Selenium 4.6+ itself.  
+   No external library like WebDriverManager is required.
+
+5. **Where does the driver executables stored?**  
+   Driver executables are cached locally, typically in the user’s home directory (e.g., `~/.cache/selenium`).  
+   This prevents repeated downloads and speeds up execution.
+
+6. **Does Selenium always try to download the executable files?**  
+   No, it checks the cache first.  
+   It downloads the driver only if it's not already available or outdated.
+
+7. **Do we still need WebDriverManager library?**  
+   Not necessarily with Selenium Manager.  
+   However, WebDriverManager may still be useful in advanced use cases or legacy projects.
