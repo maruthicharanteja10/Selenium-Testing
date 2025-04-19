@@ -234,3 +234,156 @@ js.executeScript("arguments[0].click();", element);
 // Set value
 js.executeScript("arguments[0].value='text';", element);
 ```
+---
+### 📒 **Entering Text Using JavaScriptExecutor**
+
+**Purpose:**  
+Used when `sendKeys()` fails due to hidden elements, overlays, or JS-heavy frontends.
+
+**JavaScriptExecutor Setup:**
+```java
+JavascriptExecutor js = (JavascriptExecutor) driver;
+```
+
+### ✅ **Method 1: Using WebElement**
+```java
+WebElement inputBox = driver.findElement(By.id("username"));
+js.executeScript("arguments[0].value='SeleniumUser';", inputBox);
+```
+### ✅ **Method 2: Direct JavaScript Access**
+```java
+js.executeScript("document.getElementById('username').value='SeleniumUser';");
+```
+### ⚡ **Triggering Input Event (for React/Angular apps)**
+```java
+js.executeScript(
+  "let el = document.getElementById('username');" +
+  "el.value='SeleniumUser';" +
+  "el.dispatchEvent(new Event('input'));"
+);
+```
+
+> Use this when the page relies on input events to detect text changes.
+
+---
+### 📒 **Clicking with JavaScriptExecutor**
+
+**Why use it?**  
+When Selenium's `.click()` fails due to:
+- Hidden elements
+- Overlays
+- JavaScript-heavy frontends
+- Intercepted clicks
+
+### ✅ **Syntax Using WebElement**
+```java
+JavascriptExecutor js = (JavascriptExecutor) driver;
+WebElement element = driver.findElement(By.id("submitBtn"));
+
+js.executeScript("arguments[0].click();", element);
+```
+
+### ✅ **Syntax Using Direct JavaScript**
+```java
+js.executeScript("document.getElementById('submitBtn').click();");
+```
+
+### 🧪 **Full Example**
+```java
+WebDriver driver = new ChromeDriver();
+driver.get("https://example.com");
+
+WebElement button = driver.findElement(By.id("submitBtn"));
+
+JavascriptExecutor js = (JavascriptExecutor) driver;
+js.executeScript("arguments[0].click();", button);
+```
+### ⚠️ **Note:**  
+JS click **bypasses WebDriver checks**, so use it when:
+- `.click()` throws `ElementClickInterceptedException`
+- The element is visible in the DOM but not interactable in the traditional way
+---
+
+### 📒 **Highlighting Web Elements with JavaScriptExecutor**
+
+**Purpose:**  
+Used for debugging or visual testing — highlights the element by changing its **style (border, background, etc.)**.
+
+### ✅ **Basic Syntax:**
+```java
+JavascriptExecutor js = (JavascriptExecutor) driver;
+js.executeScript("arguments[0].style.border='3px solid red'", element);
+```
+
+### 🧪 **Full Example:**
+```java
+WebDriver driver = new ChromeDriver();
+driver.get("https://example.com");
+
+WebElement element = driver.findElement(By.id("username"));
+
+JavascriptExecutor js = (JavascriptExecutor) driver;
+js.executeScript("arguments[0].style.border='3px solid red'", element);
+```
+### 🎨 **Custom Highlighting (with background color):**
+```java
+js.executeScript("arguments[0].setAttribute('style', 'border: 2px solid blue; background: yellow;')", element);
+```
+
+### 🔁 **Flashing Effect (for better visibility):**
+```java
+for (int i = 0; i < 5; i++) {
+    js.executeScript("arguments[0].style.border='3px solid red'", element);
+    Thread.sleep(200);
+    js.executeScript("arguments[0].style.border=''", element);
+    Thread.sleep(200);
+}
+```
+### ⚠️ **Note:**
+- This change is **only visual** and **temporary**.
+- Helpful in demos, debugging, and creating visual logs.
+
+---
+
+### 📒 **Scrolling with JavaScriptExecutor**
+
+**Why?**  
+To bring elements into view, reach bottom/top of the page, or scroll by specific pixels — especially when Selenium actions don’t auto-scroll.
+
+**Setup:**
+```java
+JavascriptExecutor js = (JavascriptExecutor) driver;
+```
+
+### ✅ **1. Scroll by Pixel (X, Y)**
+```java
+js.executeScript("window.scrollBy(0, 500);");  // Scroll down by 500px
+js.executeScript("window.scrollBy(0, -500);"); // Scroll up by 500px
+```
+
+### ✅ **2. Scroll to the Bottom of the Page**
+```java
+js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+```
+
+### ✅ **3. Scroll to the Top of the Page**
+```java
+js.executeScript("window.scrollTo(0, 0);");
+```
+
+### ✅ **4. Scroll an Element into View**
+```java
+WebElement element = driver.findElement(By.id("footer"));
+js.executeScript("arguments[0].scrollIntoView(true);", element);
+```
+
+- `true` aligns to the top of the element
+- `false` aligns to the bottom of the element
+
+### ✅ **5. Smooth Scroll (Optional Visual Appeal)**
+```java
+js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", element);
+```
+### ⚠️ **Note:**
+- Use scrolls when elements are outside the viewport and Selenium throws errors like `ElementNotInteractableException`.
+- Always prefer `scrollIntoView()` for targeting elements.
