@@ -177,3 +177,60 @@ js.executeScript("arguments[0].value='test';", element);
 - To manipulate the DOM directly.
 - To retrieve browser-specific or page-level properties not accessible via WebDriver.
 
+---
+### 📒 **JavaScriptExecutor in Selenium**
+
+**Purpose:**  
+Allows execution of JavaScript code in the browser controlled by Selenium WebDriver.
+
+**Initialization:**
+```java
+JavascriptExecutor js = (JavascriptExecutor) driver;
+```
+
+### 🔍 **Finding Elements using JavaScriptExecutor**
+
+You can use JavaScript DOM methods inside `executeScript()` to locate elements.
+
+### ✅ **Examples**
+
+#### 1. **By ID**
+```java
+WebElement element = (WebElement) js.executeScript("return document.getElementById('elementId');");
+```
+
+#### 2. **By Class Name**
+```java
+WebElement element = (WebElement) js.executeScript("return document.getElementsByClassName('className')[0];");
+```
+
+#### 3. **By Name**
+```java
+WebElement element = (WebElement) js.executeScript("return document.getElementsByName('name')[0];");
+```
+
+#### 4. **By Tag Name**
+```java
+WebElement element = (WebElement) js.executeScript("return document.getElementsByTagName('input')[0];");
+```
+
+#### 5. **By CSS Selector**
+```java
+WebElement element = (WebElement) js.executeScript("return document.querySelector('.className');");
+```
+
+#### 6. **By XPath**
+```java
+WebElement element = (WebElement) js.executeScript(
+  "return document.evaluate(\"//tag[@attr='value']\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;"
+);
+```
+### 🛠️ **Performing Actions After Finding**
+
+```java
+// Click
+js.executeScript("arguments[0].click();", element);
+
+// Set value
+js.executeScript("arguments[0].value='text';", element);
+```
